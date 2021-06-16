@@ -1,0 +1,36 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+
+<marquee style = "font-family: 'monotype corsiva' ; font-size :25px ; color :brown; background-color:darkgrey">
+    Welcome to jobportal for Freshers
+</marquee>
+<hr>
+
+<form class = "container mt-5" method="post">
+    {% csrf_token %}
+    <label><b>Email Id</b></label>
+    <input type ="Email" class="form-control" name="uname" placeholder="Email Id">
+
+    <label><b>Password</b></label>
+    <input type ="Password" class="form-control" name="pwd" placeholder="Enter Password">
+
+     <input type = "submit" value ="Login" class="btn btn-primary" style=margin-top:1%>
+    
+ <a href="{% url 'user_signup' %}" class = "btn btn-primary" style=margin-top:1%>CREATE AN ACCOUNT</a>
+
+
+</form>
+
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert">
+        {{message}}
+    </div>
+{% endfor %}
+
+
+
+{% endblock %}

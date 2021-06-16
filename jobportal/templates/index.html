@@ -1,0 +1,25 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<marquee style = "font-family: 'monotype corsiva' ; font-size :25px ; color :brown; background-color:darkgrey">
+    Welcome to jobportal for Freshers!" Search latest job openings online including IT, Sales, Banking, Fresher, Walk-ins, 
+    Part time, Govt jobs,etc on tech jobs"
+
+</marquee>
+
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert">
+        {{message}}
+    </div>
+{% endfor %}
+
+
+
+<div class ="container-fuild" style="margin-top:1%">
+    <img src="{% static 'image.jpg' %}" style = height:450px;width:100%>
+</div>
+
+{% endblock %}

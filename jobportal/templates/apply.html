@@ -1,0 +1,20 @@
+{% block body %}
+
+{% include 'user_navigation.html' %}
+
+<div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}>
+           {{form.as_p}}
+        <button class="btn btn-info" type="submit" onclick ="sucess()">apply</button>
+    </form>
+</div>
+
+<script>
+    function sucess(){
+        alert("Your application was received");
+    }
+</script>
+
+
+{% endblock %}
